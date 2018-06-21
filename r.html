@@ -1,0 +1,11 @@
+<html>
+	<body>
+	<script>
+		var importObject = {
+		  imports: { imported_func: arg => document.location.href="http://google.com" }
+		};
+WebAssembly.instantiateStreaming(fetch('r.wasm'), importObject)
+	.then(obj => {obj.instance.exports.exported_func()});
+	</script>
+	</body>
+</html>
